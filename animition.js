@@ -1,44 +1,12 @@
-
-  function typeFromRight(element, text, speed = 50) {
-    let index = text.length - 1;
-    const type = setInterval(() => {
-      if (index >= 0) {
-        element.textContent = text.slice(index);
-        index--;
-      } else {
-        clearInterval(type);
-      }
-    }, speed);
-  }
-
-  const aboutText = document.getElementById('ttl');
-  const aboutContent = aboutText.textContent;
-  aboutText.textContent = ''; // Clear it
-
-  setTimeout(() => {
-    typeFromRight(aboutText, aboutContent);
-  }, 400); // delay so it comes after features
-
-
-  const listItems = document.querySelectorAll('#feature-list li');
-
-  listItems.forEach((item, i) => {
-    const text = item.textContent;
-    item.textContent = ''; // Clear it
-    item.style.whiteSpace = 'nowrap';
-
-    setTimeout(() => {
-      let index = 0;
-      const type = setInterval(() => {
-        if (index < text.length) {
-          item.textContent += text[index];
-          index++;
-        } else {
-          clearInterval(type);
-        }
-      }, 40); // typing speed
-    }, i * 600); // delay per item
+// Scroll animation
+window.addEventListener('scroll', () => {
+  document.querySelectorAll('.scroll-section').forEach((section) => {
+    const rect = section.getBoundingClientRect();
+    if (rect.top < window.innerHeight - 100) {
+      section.classList.add('active');
+    }
   });
+});
 
-
-  
+// Trigger scroll event once on load
+window.dispatchEvent(new Event('scroll'));
