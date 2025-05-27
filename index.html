@@ -1,49 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <title>SATO</title>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>SATO Landing Page</title>
   <link rel="stylesheet" href="style.css" />
-  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 </head>
+
 <body>
+  <!-- Opening animation overlay -->
+  <div id="intro-overlay">
+    <h1 class="intro-logo">S.A.T.O</h1>
+  </div>
 
-  <!-- Hero Section -->
-  <section class="hero" id="hero">
-    <div class="hero-content" data-aos="fade-up">
-      <img src="logo.png" alt="Sato Logo" class="logo">
-      <h1>S.A.T.O</h1>
-      <p>Your Digital Eye for Electronics</p>
-      <div class="scroll-down" onclick="document.getElementById('about').scrollIntoView({ behavior: 'smooth' })">
-        ↓ Scroll Down
+  <div class="wrapper scroll-section">
+    <div class="glass-wrapper fade-in">
+      <div class="phone-wrapper slide-in-right">
+        <img class="phone" src="mockphone.png" alt="Phone with Sato app">
       </div>
+
+      <div class="logo-wrapper slide-in-left">
+        <img class="logo" src="logo.png" alt="Sato Logo">
+      </div>
+
+      <div class="title">
+        <h1 id="ttl">S.A.T.O - Your digital eye.</h1>
+      </div>
+
+      <h2 id="tagline">Your guide for Electronic components.</h2>
     </div>
-  </section>
+  </div>
 
-  <!-- About Section -->
-  <section class="about" id="about" data-aos="fade-up">
-    <h2>About S.A.T.O</h2>
-    <p>SATO helps you identify and understand electronic components quickly with ease.</p>
-  </section>
-
-  <!-- Features Section -->
-  <section class="features" data-aos="fade-up">
-    <h2>Features</h2>
-    <ul>
-      <li>📱 Identify components with your camera</li>
-      <li>🔍 Get datasheets instantly</li>
-      <li>📊 Track and organize your components</li>
-    </ul>
-  </section>
-
-  <!-- Call to Action -->
-  <section class="cta" data-aos="zoom-in">
-    <h2>Start Exploring</h2>
-    <button>Download App</button>
-  </section>
-
-  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
-  <script>AOS.init({ duration: 1200, once: true });</script>
+  <script src="animition.js"></script>
 </body>
 </html>
